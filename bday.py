@@ -4,8 +4,6 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
-from selenium.webdriver.common.action_chains import ActionChains
 
 usr = "INSERT username here"
 pwd = "INSERT password here"
@@ -21,20 +19,13 @@ elem.send_keys(usr)
 elem = driver.find_element_by_id("pass")
 elem.send_keys(pwd)
 elem.send_keys(Keys.RETURN)
-
+#this loop scrolls down the page
 while True:
       try:
 	   scroll = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, "//*[@id='u_0_9']/li[6]/a")))
       except TimeoutException:
 	 break
-      scroll.click() 
+      scroll.click()
 
-#the part of code below is not working, suggestions welcome!
-
-#METHOD 1 
-driver.execute_script("document.getElementsByClassName('commentable_item').click();");
-
-#METHOD 2
-#buttons =  driver.find_elements_by_tag_name("input")
-#for element in buttons:
-#    ActionChains(driver).click(element).perform()
+#Javascript executor is needed to click on JS generated elements such as the like button. Check the Class using web inspector
+driver.execute_script("var elems = document.getElementsByClassName('UFILikeLink _4x9- _4x9_ _48-k');for(var i= 0;i<elems.length;i++){elems[i].click();}");
