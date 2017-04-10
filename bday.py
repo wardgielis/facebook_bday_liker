@@ -22,7 +22,7 @@ elem.send_keys(Keys.RETURN)
 #this loop scrolls down the page
 while True:
       try:
-	   scroll = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, "//*[@id='u_0_9']/li[6]/a")))
+	   scroll = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, "//*[@class='_44b2']")))
       except TimeoutException:
 	 break
       scroll.click()
