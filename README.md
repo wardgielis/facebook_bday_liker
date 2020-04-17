@@ -7,3 +7,7 @@ The script will scroll down clicking on the 'load more' div and click the 'like'
 It works on XPATH, so it may require some tuning before use.
 
 *After the use heartfully comment every post, showing that you aren't a soulless coder.*
+
+
+
+#Started with this script from Ebergam, but updated it to suit my needs and celebrate my birthday on a lazy way :D 
